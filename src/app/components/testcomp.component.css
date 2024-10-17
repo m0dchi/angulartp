@@ -1,0 +1,11 @@
+.table-cell {
+  text-align: center;
+  padding: 8px;
+  border: 8px solid #ddd
+}
+
+th, td {
+  text-align: center;
+  padding: 8px;
+  border: 1px solid #ddd
+}
