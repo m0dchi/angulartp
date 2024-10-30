@@ -18,30 +18,35 @@
     <tfoot>
         <tr>
             <td></td>
-            <td><input [(ngModel)]="name" placeholder="Nombre"></td>
+            <td><input [(ngModel)]="name" placeholder="Name"></td>
             <td><input [(ngModel)]="price" placeholder="Color"></td>
-            <td><input [(ngModel)]="color" placeholder="Precio"></td>
+            <td><input [(ngModel)]="color" placeholder="Price"></td>
             <td><button (click)="save()">ADD</button></td>
         </tr>
     </tfoot>
 </table>
 
 <ng-template #see let-modal>
-    <div class="modal-header">
-        <h5 class="modal-title">View Device</h5>
-        <button class="close topright" aria-label="Close" (click)="modal.dismiss()"><span aria-hidden="true">&times;</span></button>
+    <div style="background-color: white; padding: 20px; border-radius: 10px; width: 60%; margin: auto;">
+      <div style="display: flex; justify-content: space-between; padding: 10px;">
+        <h5>View Device</h5>
+        <button (click)="modal.dismiss()" style="background: none; border: none; cursor: pointer;">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 15px; padding: 10px;">
+        <label style="margin-top: 10px;">ID:</label>
+        <input [(ngModel)]="id2" readonly>
+        <label style="margin-top: 10px;">NAME:</label>
+        <input [(ngModel)]="name2">
+        <label style="margin-top: 10px;">PRICE:</label>
+        <input [(ngModel)]="price2">
+        <label style="margin-top: 10px;">COLOR:</label>
+        <input [(ngModel)]="color2">
+      </div>
+      <div style="display: flex; justify-content: space-between; padding: 10px;">
+        <button (click)="modal.close()" style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px;">UPDATE</button>
+      </div>
     </div>
-    <div class="modal-body">
-        <label>ID:</label>
-        <input class="form-control" [(ngModel)]="id2" readonly>
-        <label>NAME:</label>
-        <input class="form-control" [(ngModel)]="name2">
-        <label>PRICE:</label>
-        <input class="form-control" [(ngModel)]="price2">
-        <label>COLOR:</label>
-        <input class="form-control" [(ngModel)]="color2">
-    </div>
-    <div class="modal-footer">
-        <button class="btn btn-primary" (click)="modal.close()">UPDATE</button>
-    </div>
-</ng-template>
+  </ng-template>
+  
